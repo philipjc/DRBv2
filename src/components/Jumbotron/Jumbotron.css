@@ -1,0 +1,16 @@
+.Jumbotron {  
+  background: #777;
+  color: #fff;
+  padding-top: 10px;  
+  padding-bottom: 300px;
+}
+
+.Jumbotron__motto {
+  font-size: 30px;
+  margin: 20px;
+}
+
+.Jumbotron__detail {
+  font-size: 78px;  
+  margin: 20px;
+}

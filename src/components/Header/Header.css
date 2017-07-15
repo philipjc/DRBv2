@@ -1,0 +1,71 @@
+.Header__wrapper {
+  height: 180px; /* prevents scroll snap bug */
+}
+
+.Header {
+  display: flex;
+  margin: 20px;  
+}
+
+.Header.active {
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  background: #FFF;
+}
+
+.Header__img {
+  flex: 1;
+}
+
+.Header__img img {
+  width: 100%;
+  transition: ease-in-out .5s;
+}
+
+.Header__img.active img {
+  width: 30%;
+}
+
+/*==========================*/
+
+.Header__list {
+  flex: 3;
+  padding-top: 20px;
+  display: flex;
+  margin: 0;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: ease-in-out .5s;
+}
+
+.Header__list.active {
+  flex: 3;
+  padding-top: 0px;
+}
+
+.Header__list a {
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 80px;
+}
+
+.Header__list.active a {
+  flex: 3;
+  margin: 0px;
+  font-size: 16px;
+}
+
+.Header__list a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: orange;
+  transition: width .3s;
+}
+
+.Header__list a:hover::after {
+  width: 100%;
+}

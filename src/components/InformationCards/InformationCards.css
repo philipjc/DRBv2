@@ -1,0 +1,8 @@
+.InformationCards {
+  position: absolute;
+  top: 520px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
