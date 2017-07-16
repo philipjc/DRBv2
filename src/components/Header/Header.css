@@ -4,7 +4,8 @@
 
 .Header {
   display: flex;
-  margin: 20px;  
+  margin: 20px;
+  z-index: 200;
 }
 
 .Header.active {
@@ -13,6 +14,7 @@
   margin: 0;
   padding: 10px;
   background: #FFF;
+  border-bottom: 2px solid blue;
 }
 
 .Header__img {
@@ -42,13 +44,19 @@
 
 .Header__list.active {
   flex: 3;
-  padding-top: 0px;
+  padding-top: 5px;
+  display: flex;
+  margin: 0;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: ease-in-out .5s;
 }
 
 .Header__list a {
+  flex: 3;
   font-size: 20px;
   text-decoration: none;
-  margin-right: 80px;
+  /* margin-right: 80px; */
 }
 
 .Header__list.active a {
