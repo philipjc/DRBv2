@@ -1,8 +1,16 @@
 .InformationCards {
   position: absolute;
+  top: 1520px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  transition: ease-in-out .5s;
+}
+
+.InformationCards.active {
+  position: absolute;
   top: 520px;
   display: flex;
   justify-content: space-between;
   margin: 10px;
 }
-

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import InformationCard from '../InformationCard/InformationCard';
+import classNames from 'classnames';
+
 import './InformationCards.css';
 
 import maintenaceData from './data/maintenanceInfo';
@@ -20,25 +22,69 @@ const servicesList = [
 class InformationCards extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      scrolled: false
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleWindowScrollEvent.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleWindowScrollEvent);
+  }
+
+  animateCardsUp() {
+
+  }
+
+  animateCardDown() {
+
+  }
+
+  animateCardsUp() {
+    this.setState({
+      scrolled: true
+    });
+  }
+
+  animateCardDown() {
+    this.setState({
+      scrolled: false
+    });
+  }
+
+  handleWindowScrollEvent(e) {
+    console.log('scrolled', e.srcElement.body.scrollTop);
+    // perform y up or down catch and other differences
+    if (e.srcElement.body.scrollTop > 180) {
+      this.animateCardsUp();
+    } else {
+      this.animateCardDown();
+    }
   }
 
   render() {
+
+     const cardsClass = classNames('InformationCards', {
+      'active': this.state.scrolled === true,
+    });
+
     return (
-      <div className="InformationCards">
+      <div className={cardsClass}>
         <InformationCard 
           heading="maintenance"
           info={maintenaceData.text}
-          popup={true}
         />
         <InformationCard
           heading="management"        
           info={managementData.text}
-          popup={true}          
         />
         <InformationCard
           heading="services"
           list={servicesList}
-          popup={false}          
         />
       </div>
     )

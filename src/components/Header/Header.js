@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-
 import './Header.css';
 
 class Header extends Component {
@@ -81,10 +80,9 @@ class Header extends Component {
             <img src={this.props.logo} alt="DRB logo" />          
           </div>
           <nav className={listClass}>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-            <a href="#">Call</a>
+            <Link to='/home'><span>Home</span></Link>
+            <Link to='/services'><span>Services</span></Link>
+            <a href="#contact">Contact</a>
           </nav>
         
         </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Item from './components/Item/Item';
+import InputForm from '../InputForm/InputForm';
+
 import './Contact.css';
 
 class Contact extends Component {
@@ -7,18 +8,11 @@ class Contact extends Component {
     super(props);
   }
 
-  renderContactItems() {
-    return this.props.list.map((item, idx) => {
-      return <Item name={item.value} width={this.props.size} key={idx} />
-    });
-  }
-
   render() {
 
-    const items = this.renderContactItems();
     return (
-      <div className="Contact row around-lg">
-        {items}      
+      <div id='contact' className="Contact">
+        <InputForm />
       </div>
     );
   }

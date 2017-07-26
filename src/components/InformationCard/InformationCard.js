@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link, Route } from 'react-router-dom';
+
 import classNames from 'classnames';
 import './InformationCard.css';
 
@@ -9,7 +11,6 @@ class InformationCard extends Component {
       active: false
     }
     this.slideCard = this.slideCard.bind(this);
-    this.renderListItems = this.renderListItems.bind(this);
   }
 
   slideCard() {
@@ -18,40 +19,12 @@ class InformationCard extends Component {
     })
   }
 
-  renderListItems() {
-    return this.props.list.map((item, idx) => {
-      return (
-        <li key={idx}>{item}</li>
-      )
-    });
-  }
-
-  renderList() {
-    return (
-      <div className="InformationCard__list">
-          <ul>
-            {this.renderListItems()}
-          </ul>
-      </div>
-    )
-  }
-
-  renderPopUp() {
-    return (
-      <div className="InformationCard__popup">
-        <p>show more</p>
-      </div>
-    )
-  }
-
-  render() {
+  renderCardWithSlideup() {
 
     const sliderClass = classNames({
       'InformationCard__slider': !this.state.active,
       'InformationCard__slider-active': this.state.active
     });
-
-    const renderedElement = this.props.list ? this.renderList() : this.renderPopUp();
 
     return (
       <div className="InformationCard" onMouseOver={this.slideCard} onMouseOut={this.slideCard}>
@@ -63,10 +36,43 @@ class InformationCard extends Component {
           <div className="InformationCard__text">
             <p>{this.props.info}</p>
           </div>
-          {renderedElement}
+          <div className="InformationCard__popup">
+            <Link to={'services/' + this.props.heading}>
+              <p>show more</p>
+            </Link>
+          </div>
         </div>
       </div>
     )
+  }
+
+  renderCardWithListItems() {
+    return (
+      <div className="InformationCard">
+        <div className="InformationCard__heading">
+          <p>{this.props.heading}</p>
+        </div>
+
+        <div className="InformationCard__list">
+          <ul>
+            {
+              this.props.list.map((item, idx) => {
+                return (
+                  <li key={idx}>{item}</li>
+                )
+              })
+            }
+          </ul>
+      </div>
+        
+      </div>
+    )
+  }
+
+  render() {
+
+    return this.props.list ? this.renderCardWithListItems() : this.renderCardWithSlideup();
+
   }
 }
 
