@@ -21,7 +21,7 @@ class Home extends Component {
         />
 
         <Jumbotron 
-          smallText="The company that cares about your home"
+          mediumText="The company that cares about your home"
           largeText="Covering all aspects of property maintenance" 
         />
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   HashRouter,
+  Router,
   Switch,
   Route,
   Link

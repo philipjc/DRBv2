@@ -6,15 +6,41 @@ class Jumbotron extends Component {
     super(props);
   }
 
+  renderSmallText() {
+    return (
+      <div className="Jumbotron__detail__small">
+          {this.props.smallText}
+      </div>  
+    )
+  }
+
+  renderMediumText() {
+    return (
+      <div className="Jumbotron__detail__medium">
+        {this.props.mediumText}
+      </div>
+    )
+  }
+
+  renderLargeText() {
+    return (
+      <div className="Jumbotron__detail__large">
+        {this.props.largeText}
+      </div>
+    )
+  }
+
   render() {
+
+    const smallInfo = this.props.smallText ? this.renderSmallText() : null;
+    const mediumInfo = this.props.mediumText ? this.renderMediumText() : null;
+    const largeInfo = this.props.largeText ? this.renderLargeText() : null;    
+
     return (
       <div className="Jumbotron">
-        <div className="Jumbotron__motto">
-          {this.props.smallText}
-        </div>
-        <div className="Jumbotron__detail">
-          {this.props.largeText}
-        </div>        
+        {smallInfo}           
+        {mediumInfo}
+        {largeInfo}
       </div>
     );
   }

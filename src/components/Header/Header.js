@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Router, BrowserRouter } from 'react-router-dom';
 import classNames from 'classnames';
 import './Header.css';
 
@@ -59,6 +59,8 @@ class Header extends Component {
 
   render() {
 
+    console.log(this.props.location);
+
     const headerClass = classNames('Header', {
       'active': this.state.scrolled === true,
     });
@@ -79,9 +81,10 @@ class Header extends Component {
           <div className={imageClass}>
             <img src={this.props.logo} alt="DRB logo" />          
           </div>
+
           <nav className={listClass}>
             <Link to='/home'><span>Home</span></Link>
-            <Link to='/services'><span>Services</span></Link>
+            <Link to='/services/management'><span>Services</span></Link>
             <a href="#contact">Contact</a>
           </nav>
         

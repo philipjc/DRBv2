@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Contact from '../../components/Contact/Contact';
+import Jumbotron from '../../components/Jumbotron/Jumbotron';
 
 import './Maintenance.css';
 
@@ -10,15 +11,19 @@ class Maintenance extends Component {
   }
 
   render() {
-    return (
-      <div className="Maintenance">
-        <h2>Maintenance</h2>
-        <p>
-          It is inevitable after time our homes require a bit of TLC. 
+
+    const para = `It is inevitable after time our homes require a bit of TLC. 
           We can fix most bumps and bruises around the home, but sometimes a new item is needed. 
           We source good quility products with a manufacturers guarantee. 
-          It's your option, but we can offer our professional advice.
-        </p>
+          It's your option, but we can offer our professional advice.`;
+
+    return (
+      <div className="Maintenance">
+
+        <Jumbotron 
+          smallText='Maintenance'
+          mediumText={para}
+        />
 
         <Contact />
       </div>

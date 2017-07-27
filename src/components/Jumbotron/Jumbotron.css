@@ -6,12 +6,17 @@
   margin-bottom: 200px;
 }
 
-.Jumbotron__motto {
+.Jumbotron__detail__small {
+  font-size: 20px;
+  margin: 20px;
+}
+
+.Jumbotron__detail__medium {
   font-size: 30px;
   margin: 20px;
 }
 
-.Jumbotron__detail {
+.Jumbotron__detail__large {
   font-size: 78px;  
   margin: 20px;
 }
